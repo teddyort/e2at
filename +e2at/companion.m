@@ -21,8 +21,8 @@ function [ varargout ] = companion( A,B,C,D )
     P = cat(1,r{:});
     [Ac,Bc,Cc,Dc] = e2at.ss2ss(A,B,C,D,P);
     if nargin==1
-        varargout = {e2at.symss(Ac,Bc,Cc,Dc)};
+        varargout = {e2at.symss(Ac,Bc,Cc,Dc), P};
     else
-        varargout = {Ac,Bc,Cc,Dc};
+        varargout = {Ac,Bc,Cc,Dc,P};
     end
 end
